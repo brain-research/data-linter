@@ -8,11 +8,6 @@ This code accompanies the
 
 The Data Linter identifies potential issues (lints) in your ML training data.
 
-## Authors
-
-The Data Linter was created by Nick Hynes (nhynes@berkeley.edu) during an
-internship at Google, hosted by Michael Terry (michaelterry@google.com).
-
 # Using the Data Linter
 
 ## Prerequisites
@@ -97,3 +92,8 @@ To make it easier to run the code, we include protobuf definitions from
 
 This is not an official Google project. This project will not be supported or
 maintained, and we will not accept any pull requests.
+
+# Authors
+
+The Data Linter was created by Nick Hynes (nhynes@berkeley.edu) during an
+internship at Google with Michael Terry (michaelterry@google.com).
