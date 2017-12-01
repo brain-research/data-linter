@@ -1,0 +1,38 @@
+// Protocol messages for describing the results of running a LintDetector
+// on a dataset.
+syntax = "proto3";
+option cc_enable_arenas = true;
+
+import "example.proto";
+
+package datalinter;
+
+message LintResult {
+  // The name of the LintDetector. This must match the class name.
+  string linter_name = 1;
+
+  // The warnings yielded by the LintDetector.
+  repeated string warnings = 2;
+
+  // Additional information, taken from the dataset, that enables providing
+  // a user of this LintResult to understand why the LintDetector was triggered.
+  repeated LintSample lint_samples = 3;
+}
+
+// Holds information, derived from the dataset, that can be used to explain
+// why a warning was generated.
+message LintSample {
+  repeated tensorflow.Example examples = 2;
+  repeated string strings = 3;
+  repeated double nums = 4;
+  repeated Statistics stats = 5;
+}
+
+message Statistics {
+  string id = 1;
+  double count = 2;
+  double mean = 3;
+  double std_dev = 4;
+  double min = 5;
+  double max = 6;
+}
